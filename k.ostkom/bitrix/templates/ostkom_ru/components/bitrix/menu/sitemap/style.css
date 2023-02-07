@@ -1,0 +1,6 @@
+.menu-sitemap-tree{margin-bottom:30px;}
+.menu-sitemap-tree ul{list-style:none;}
+.menu-sitemap-tree ul{display:inline-block;width:33.33%;vertical-align:top;}
+.menu-sitemap-tree a{color:#888;font-size: 20px;text-decoration:none;border-bottom:none;}
+.menu-sitemap-tree ul ul {width:100%;padding:0px;margin:0px;}
+.menu-sitemap-tree ul ul a:before{content:"\2022";color:#f2ac47;display:inline-block;margin-right:10px;}

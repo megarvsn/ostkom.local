@@ -1,0 +1,1 @@
+© SIA OSTKOM, <?=date("Y")?>

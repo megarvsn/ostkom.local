@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"", 
+		"/audit/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Internets", 
+		"/business/business_internet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Televīzija", 
+		"/business/business_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Telefonija", 
+		"/business/business_telephony/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Atbalsts", 
+		"/support/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

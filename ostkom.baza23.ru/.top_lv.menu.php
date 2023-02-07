@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Internets+TV", 
+		"/home/home_internet_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Internets", 
+		"/home/home_internet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Televīzija", 
+		"/home/home_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Telefonija", 
+		"/home/home_telephony/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Akcijas", 
+		"/actions/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Atbalsts", 
+		"/support/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

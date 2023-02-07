@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Интернет+ТВ", 
+		"/ru/home/home_internet_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Интернет", 
+		"/ru/home/home_internet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Телевидение", 
+		"/ru/home/home_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Телефония", 
+		"/ru/home/home_telephony/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Акции", 
+		"/ru/actions/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поддержка", 
+		"/ru/support/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

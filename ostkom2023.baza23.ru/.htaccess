@@ -1,0 +1,75 @@
+Options -Indexes
+ErrorDocument 404 /404.php
+
+<IfModule mod_php.c>
+        php_flag allow_call_time_pass_reference 1
+        php_flag session.use_trans_sid off
+        php_value auto_prepend_file "/home/bitrix/ext_www/k.ostkom/bitrix/modules/security/tools/start.php"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+        Options +FollowSymLinks
+        RewriteEngine On
+         RewriteBase /
+
+        # Перенаправляем URL на домен без www
+        RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+            RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+        # Перенаправляем с HTTP на HTTPS
+        RewriteCond %{HTTPS} off
+        RewriteCond %{HTTP:X-Forwarded-Proto} !https
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+        # Убираем повторяющиеся слеши (/) в URL
+        RewriteCond %{THE_REQUEST} //
+        RewriteRule .* /$0 [R=301,L]
+
+        # Убираем index.php или index.html, если он есть в конце URL
+        RewriteCond %{REQUEST_METHOD} =GET
+        RewriteCond %{REQUEST_URI} ^(.*)/index\.(php|html)$
+        RewriteRule ^(.*)$ %1/ [R=301,L]
+
+        # Добавляем слеш (/) в конце есели его нет и это не файл
+        RewriteCond %{REQUEST_URI} !(.*)/$
+        # Если слеша в конце нет.
+        RewriteCond %{REQUEST_FILENAME} !-f
+        # Не является файлом.
+        RewriteCond %{REQUEST_URI} !\..+$
+        # В URL нет точки (файл).
+        RewriteRule ^(.*)$ $1/ [L,R=301]
+
+        # Всё остальное отправляем на urlrewrite.php
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-l
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+        RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+        RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+        RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+        RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
+</IfModule>
+
+<IfModule mod_dir.c>
+        DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access plus 10 days"
+        ExpiresByType image/gif "access plus 10 days"
+        ExpiresByType image/jpg "access plus 10 days"
+        ExpiresByType image/jpeg "access plus 10 days"
+        ExpiresByType image/png "access plus 10 days"
+        ExpiresByType image/svg+xml "access plus 10 days"
+        ExpiresByType text/css "access plus 10 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+        AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+        AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+        AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
+</IfModule>
+

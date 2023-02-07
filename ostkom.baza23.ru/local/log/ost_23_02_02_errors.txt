@@ -1,0 +1,45 @@
+2023-02-02 13:34:04 - Host: ostkom.baza23.ru:80 - UNCAUGHT_EXCEPTION - [TypeError] 
+call_user_func_array(): Argument #1 ($callback) must be a valid callback, non-static method Redsign\reCaptcha3\Core::OnPageStart() cannot be called statically (0)
+/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/classes/general/module.php:480
+#0: ExecuteModuleEventEx
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include.php:163
+#1: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog_before.php:14
+#2: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog.php:10
+#3: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/header.php:1
+#4: require(string)
+	/home/bitrix/ext_www/ostkom.baza23.ru/index.php:2
+----------
+
+2023-02-02 13:36:25 - Host: ostkom.baza23.ru:80 - UNCAUGHT_EXCEPTION - [TypeError] 
+call_user_func_array(): Argument #1 ($callback) must be a valid callback, non-static method Redsign\reCaptcha3\Core::OnPageStart() cannot be called statically (0)
+/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/classes/general/module.php:480
+#0: ExecuteModuleEventEx
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include.php:163
+#1: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog_before.php:14
+#2: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog.php:10
+#3: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/header.php:1
+#4: require(string)
+	/home/bitrix/ext_www/ostkom.baza23.ru/index.php:2
+----------
+
+2023-02-02 13:44:04 - Host: ostkom.baza23.ru:80 - UNCAUGHT_EXCEPTION - [TypeError] 
+call_user_func_array(): Argument #1 ($callback) must be a valid callback, non-static method Redsign\reCaptcha3\Core::OnPageStart() cannot be called statically (0)
+/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/classes/general/module.php:480
+#0: ExecuteModuleEventEx
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include.php:163
+#1: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog_before.php:14
+#2: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/modules/main/include/prolog.php:10
+#3: require_once(string)
+	/home/bitrix/ext_www/k.ostkom/bitrix/header.php:1
+#4: require(string)
+	/home/bitrix/ext_www/ostkom.baza23.ru/index.php:2
+----------
+

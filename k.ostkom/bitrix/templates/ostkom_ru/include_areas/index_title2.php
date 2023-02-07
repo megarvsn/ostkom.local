@@ -1,0 +1,1 @@
+<a class="btn btn--secondary" href="/ru/actions/">Смотреть все акции</a>

@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Услуги по защите персональных данных", 
+		"/ru/audit/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Интернет", 
+		"/ru/business/business_internet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Телевидение", 
+		"/ru/business/business_tv/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Телефония", 
+		"/ru/business/business_telephony/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поддержка", 
+		"/ru/support/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

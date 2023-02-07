@@ -1,0 +1,5 @@
+div.navlink{display:inline-block;}
+.submenu{position:absolute;z-index:1000;right:0px;padding:10px;border-top:2px #a74dad solid;display:none;background:#fff;box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 0px;}
+div.navlink.parent{position:relative;}
+.submenu a{font-size:16px;color:#888;font-weight:normal;border-bottom:0px;}
+.navlink.parent:hover .submenu{display:block;}

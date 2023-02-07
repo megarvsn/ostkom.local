@@ -1,0 +1,1 @@
+<a href="mailto:ostkom@ostkom.lv">ostkom@ostkom.lv</a>

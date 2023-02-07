@@ -1,0 +1,11 @@
+[cmdline]
+0=
+
+[Dir Hist New Right Panel]
+0=/var
+1=/var/ftp
+2=/var/ftp/webdev/about
+3=/var/ftp/webdev
+
+[Dir Hist New Left Panel]
+0=/var/ftp/webdev
