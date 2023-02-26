@@ -1,0 +1,15 @@
+<?
+$PERM["__nav.js"]["5"]="X";
+$PERM["styles.css"]["5"]="X";
+$PERM["favicon.ico"]["5"]="X";
+$PERM[".DS_Store"]["5"]="X";
+$PERM["description.php"]["5"]="X";
+$PERM["scripts"]["5"]="X";
+$PERM["sprite"]["5"]="X";
+$PERM["styles"]["5"]="X";
+$PERM["images"]["5"]="X";
+$PERM["fonts"]["5"]="X";
+$PERM["components"]["5"]="X";
+$PERM["snippets"]["5"]="X";
+$PERM["include_areas"]["5"]="X";
+?>

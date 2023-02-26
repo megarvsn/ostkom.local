@@ -1,0 +1,1 @@
+Jūsu privātā informācija tiks izmantota elektronisko sakaru pakalpojumu nodrošināšanai. Datu apstrāde ir reģistrēta Valsts Datu inspekcijā.

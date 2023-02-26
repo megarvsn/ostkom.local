@@ -1,0 +1,4 @@
+.quest-item{margin-bottom: 50px;}
+.quest-item .quest{margin-bottom: 20px;border:1px #a74dad solid;padding:25px}
+.quest-item .quest a{text-decoration:none;color:#191919;border-bottom: 1px dashed #888;}
+.quest-item .answer{margin-left: 30px;border-left:2px #a74dad solid;padding-left:25px;display:none}

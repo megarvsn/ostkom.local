@@ -1,0 +1,1 @@
+Individuāla pieeja

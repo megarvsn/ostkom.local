@@ -1,0 +1,1 @@
+Izvēlieties pilsētu vai rajonu

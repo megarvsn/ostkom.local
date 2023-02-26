@@ -1,0 +1,108 @@
+.redactor .hero-inet-tv__offer {
+    color: #f2ac47;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+.redactor .u-size-h5 {
+    font-size: 20px;
+}
+.redactor .h1,.redactor h1 {
+    font-size: 50px;
+}
+.redactor .hero-inet-tv__desc .quantity {
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+.redactor .quantity {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: left;
+}
+.redactor .u-size-h2 {
+    font-size: 40px;
+}
+.redactor .quantity__value {
+    font-size: 40px;
+    font-size: 34px;
+    margin-right: 7px;
+}
+.redactor .quantity__suffix {
+    color: #a74dad;
+    font-size: 16px;
+}
+.redactor .price {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    color: #a74dad;
+    white-space: nowrap;
+}
+.redactor .free-box__subtitle,.redactor .free-box__title {
+    margin: 0;
+}
+.redactor .h2,.redactor h2 {
+    font-size: 40px;
+}
+.redactor .free-box__subtitle {
+    color: #a74dad;  
+    margin-top: 10px;
+}
+.redactor .free-box__subtitle,.redactor .free-box__title {
+    margin: 0;
+}
+.redactor .h3, .redactor h3 {
+    font-size: 30px;
+}
+.redactor .h1,.redactor .h2,.redactor .h3,.redactor .h4,.redactor .h5,.redactor .h6,.redactor h1,.redactor h2,.redactor h3,.redactor h4,.redactor h5,.redactor h6 {
+    font-family: HelveticaNeueCyr,sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+    margin: 40px 0 20px;
+}
+.redactor .u-size-h5 {
+    font-size: 20px;
+}
+.redactor .u-highlight {
+    color: #a74dad!important;
+}
+.redactor .benefit__icon {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 5%;
+}
+.redactor .benefit__subtitle,.redactor .benefit__title {
+    margin: 0;
+}
+.redactor .h2,.redactor h2 {
+    font-size: 40px;
+}
+.redactor .hero-tv__subtitle{
+    margin-bottom: 30px;
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+    margin: 40px 0 30px;
+    font-size: 30px;	
+}
+.redactor .purple_22{color:#a74dad;font-size: 22pt;font-weight:bold;margin-bottom:20px} 
+.lha-iframe  .purple_22{color:#a74dad;font-size: 22pt;font-weight:bold;margin-bottom:20px} 
+.lha-iframe .hero-tv__subtitle{
+    margin-bottom: 30px;
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+    margin: 40px 0 30px;
+    font-size: 30px;	
+}

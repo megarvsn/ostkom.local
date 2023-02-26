@@ -1,0 +1,1 @@
+Katrs Abonents, kam ir radušās tehniskas problēmas ar pieeju interneta tīklam,  var kļūt par programmas ''kvalitātes garantija” dalībnieku.

@@ -1,0 +1,1 @@
+<div class="verification_but"><a href="/verification/">Pārbaudīt pakalpojuma pieejamību</a></div><br>

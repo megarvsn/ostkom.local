@@ -1,0 +1,1 @@
+Pārbaudiet iespēju pieslēgt pakalpojumus, ievadot pilsētu, ielas nosaukumu un mājas numuru

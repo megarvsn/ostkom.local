@@ -1,0 +1,1 @@
+Turpinot lietot ostkom.lv mājas lapu ,Jūs piekrītiet sīkdatņu izmantošanas noteikumiem. <a href="/privacy/">Uzzināt vairāk</a>

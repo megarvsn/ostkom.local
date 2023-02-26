@@ -1,0 +1,1 @@
+Darba dienās no 9:00-18:00 (pārtraukums 13:00-14:00), brīvdienās un svētku dienās - slēgts.

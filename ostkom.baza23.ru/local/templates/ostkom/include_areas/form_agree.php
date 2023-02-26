@@ -1,0 +1,1 @@
+<a href="/Personu%20datu%20Ostkom.docx">Piekrītu nosacījumiem</a>
