@@ -65,7 +65,6 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
 // Scripts & Styles
 $APPLICATION->ShowCSS(true, false);
 $APPLICATION->ShowHeadStrings();
-$APPLICATION->ShowHeadScripts();
 ?>
 <!DOCTYPE html>
 <html lang="<?= LANGUAGE_ID ?>">
