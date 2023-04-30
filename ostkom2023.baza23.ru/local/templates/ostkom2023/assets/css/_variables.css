@@ -1,0 +1,20 @@
+:root {
+  --white: #ffffff;
+  --light: #f6f6f6;
+  --grey-lighter: #a1a1a1;
+  --grey-light: #929292;
+  --grey: #6e6e73;
+  --dark: #121212;
+  --black: #000000;
+  --orange-light: #f4793e;
+  --orange: #e95a16;
+  --orange-dark: #d35113;
+  --violet-light: #9c37ac;
+  --violet: #73347d;
+  --violet-dark: #5B2763;
+  --red: #d20f0f;
+  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-family-add: 'Open Sans', Arial, Helvetica, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.125;
+}

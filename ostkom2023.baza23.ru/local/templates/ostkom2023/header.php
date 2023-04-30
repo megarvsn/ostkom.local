@@ -61,19 +61,19 @@ $asset->addString('<meta name="msapplication-config" content="' . SITE_TEMPLATE_
 
 // CSS
 $asset->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
-
-// Scripts & Styles
-$APPLICATION->ShowCSS(true, false);
-$APPLICATION->ShowHeadStrings();
 ?>
 <!DOCTYPE html>
 <html lang="<?= LANGUAGE_ID ?>">
 
 <head>
     <?
+    // Scripts & Styles
+    $APPLICATION->ShowCSS(true, false);
+    $APPLICATION->ShowHeadStrings();
+
     // Запрет на индексирование страниц сайта, указанных в файле robots.txt
-    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/d-robots.php')) {
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/d-robots.php');
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/classes/Baza23/d-robots.php')) {
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/local/classes/Baza23/d-robots.php');
         $dRobots = dRobots::fromFile();
         $noindex = $dRobots->checkUrl($_SERVER['REQUEST_URI']) ? '<meta name="googlebot" content="noindex">' . PHP_EOL : '';
     } else
@@ -83,6 +83,9 @@ $APPLICATION->ShowHeadStrings();
 </head>
 
 <body>
+    <? if ($USER->IsAdmin() == "Y") { ?>
+        <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
+    <? } ?>
     <header>
         It's header
     </header>

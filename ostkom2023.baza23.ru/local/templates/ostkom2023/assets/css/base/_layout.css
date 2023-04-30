@@ -1,0 +1,82 @@
+body {
+  display: grid;
+  grid-template:
+    "header" auto
+    "main  " 1fr
+    "footer" auto
+    / 1fr;
+  height: 100vh;
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+
+  display: grid;
+  grid-template:
+    "check_services check_services check_services    check_services   " auto
+    "menu_services  menu_shop      menu_help         menu_info        " auto
+    "mobile_apps    follow_us      call              call             " auto
+    "copyright      copyright      legal_information legal_information" auto
+    / 1fr 1fr 1fr 1fr;
+  gap: 20px 40px;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    grid-template:
+      "check_services check_services    check_services   " auto
+      "menu_services  menu_shop         menu_help        " auto
+      "menu_info      mobile_apps       follow_us        " auto
+      "call           call              call             " auto
+      "copyright      legal_information legal_information" auto
+      / 1fr 1fr 1fr;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template:
+      "check_services   " auto
+      "menu_services    " auto
+      "menu_shop        " auto
+      "menu_help        " auto
+      "menu_info        " auto
+      "mobile_apps      " auto
+      "follow_us        " auto
+      "call             " auto
+      "copyright        " auto
+      "legal_information" auto
+      / 1fr;
+    gap: 15px 0px;
+  }
+
+  .check_services {
+    grid-area: check_services;
+  }
+  .menu_services {
+    grid-area: menu_services;
+  }
+  .menu_shop {
+    grid-area: menu_shop;
+  }
+  .menu_help {
+    grid-area: menu_help;
+  }
+  .menu_info {
+    grid-area: menu_info;
+  }
+  .mobile_apps {
+    grid-area: mobile_apps;
+  }
+  .follow_us {
+    grid-area: follow_us;
+  }
+  .call {
+    grid-area: call;
+  }
+  .copyright {
+    grid-area: copyright;
+  }
+  .legal_information {
+    grid-area: legal_information;
+  }
+}

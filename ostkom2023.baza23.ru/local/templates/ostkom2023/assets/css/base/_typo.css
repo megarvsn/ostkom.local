@@ -1,3 +1,24 @@
+html {
+  line-height: var(--line-height-base);
+}
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
 *:focus-visible {
-    outline: 0;
+  outline: 0;
+}
+ul, ol {
+  margin: 0;
+}
+.btn_footer {
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 150px;
+  color: white;
+  &:hover,
+  &:active {
+    background-color: white;
+    color: var(--dark);
   }
+}

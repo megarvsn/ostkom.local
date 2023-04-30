@@ -1,3 +1,9 @@
 @import "vendors/normalize.css";
+@import "fonts.css";
 @import "variables.css";
+@import "base/layout.css";
 @import "base/typo.css";
+
+@import "blocks/header.css";
+@import "blocks/main.css";
+@import "blocks/footer.css";

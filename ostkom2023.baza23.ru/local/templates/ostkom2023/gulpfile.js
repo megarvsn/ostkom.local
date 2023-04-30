@@ -21,8 +21,8 @@ const sourcemaps = require("gulp-sourcemaps");
 const removeSourcemaps = require("gulp-remove-sourcemaps");
 
 // Path
-const srcDir = "./ostkom2023.baza23.ru/local/templates/ostkom2023/assets/";
-const appDir = "./ostkom2023.baza23.ru/local/templates/ostkom2023/";
+const srcDir = "./local/templates/ostkom2023/assets/";
+const appDir = "./local/templates/ostkom2023/";
 
 const arrStylesCSS = [
   { src: "css/main.css", dest_path: "css/", dest_name: "styles.min.css" },
@@ -124,8 +124,8 @@ async function scriptJS() {
 }
 
 function images() {
-  return src(srcDir + "assets/img/**/*")
-    .pipe(newer(srcDir + "assets/img/**/*"))
+  return src(srcDir + "img/**/*")
+    .pipe(newer(srcDir + "img/**/*"))
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),

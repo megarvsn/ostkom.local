@@ -1,2 +1,10 @@
 User-agent: *
-Disallow: /
+Disallow: /about/
+Disallow: /bitrix/
+
+User-agent: Googlebot
+Disallow: /about/
+Disallow: /bitrix/
+
+Host: https://ostkom2023.baza23.ru
+Sitemap: https://ostkom2023.baza23.ru/sitemap.xml

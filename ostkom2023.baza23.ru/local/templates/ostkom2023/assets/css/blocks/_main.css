@@ -1,0 +1,5 @@
+main {
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 0 30px 90px;
+}
