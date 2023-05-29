@@ -1,0 +1,221 @@
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+$templateLibrary = [];
+if ($arParams["U_PARAMS"]["USE_PERFECT_SCROLLBAR"] == "Y") {
+    $templateLibrary[] = 'perfect-scrollbar';
+}
+$templateData = array(
+    'TEMPLATE_LIBRARY' => $templateLibrary,
+);
+unset($templateLibrary);
+
+$navCssId = $arParams["U_PARAMS"]["CSS_ID"];
+$navCssClasses = $arParams["U_PARAMS"]["CSS_CLASSES"];
+$ulCssClasses = "menu-list";
+$navItemCssClasses = "menu-item";
+$selectedItemCssClasses = "selected";
+$childSelectedItemCssClasses = "child-selected";
+$navLinkCssClasses = "menu-link";
+$parentItemCssClasses = "menu-parent";
+
+$imageItemCssClasses = "menu-item-img";
+$titleItemCssClasses = "menu-item-title";
+
+$indexFrom = -1;
+if (isset($arParams["U_PARAMS"]["INDEX_FROM"])) $indexFrom = IntVal($arParams["U_PARAMS"]["INDEX_FROM"]);
+$indexTo = -1;
+if (isset($arParams["U_PARAMS"]["INDEX_TO"])) $indexTo = IntVal($arParams["U_PARAMS"]["INDEX_TO"]);
+
+$showSymbolSubmenu = false;
+if (isset($arParams["U_PARAMS"]["SHOW_SYMBOL_SUBMENU"])) $showSymbolSubmenu = ($arParams["U_PARAMS"]["SHOW_SYMBOL_SUBMENU"] == "Y");
+
+if (!empty($arResult)) {
+    $arScrollCssIds = [];
+
+    ?><nav class="menu-wrapper<? if ($navCssClasses) { ?> <?= $navCssClasses ?><? } ?>"<? if ($navCssId) { ?> id="<?= $navCssId ?>"<? } ?>><?
+        ?><ul class="<?= $ulCssClasses ?> menu-level-1"><?
+            $maxLevel = $arParams["MAX_LEVEL"];
+            if ($maxLevel <= 0) $maxLevel = 1;
+
+            $previousLevel = 0;
+            // menu items with DEPTH_LEVEL == 1
+            $index = -1;
+            // skip menu items with DEPTH_LEVEL > 1 if parent menu isn't shown
+            $skip = false;
+            foreach ($arResult as $key => $arItem) {
+                $depthLevel = $arItem["DEPTH_LEVEL"];
+                if ($depthLevel > $maxLevel) continue;
+                if ($depthLevel == 1) {
+                    $index ++;
+
+                    $skip = ($indexFrom >= 0 && $index < $indexFrom || $indexTo >= 0 && $index > $indexTo);
+                    if ($skip) continue;
+                }
+                if ($skip && $depthLevel > 1) continue;
+
+                $isParent = ($arItem["IS_PARENT"] && (($maxLevel - $depthLevel) > 0));
+                $text = $arItem["TEXT"];
+                $link = $arItem["LINK"];
+
+                $cssClasses = '';
+                if (isset($arItem["PARAMS"]["PROPERTIES"]["UP_CSS_CLASSES"])) $cssClasses = trim($arItem["PARAMS"]["PROPERTIES"]["UP_CSS_CLASSES"]);
+
+                $showTextAsLink = ($arItem["PARAMS"]["PROPERTIES"]["UP_SHOW_TEXT_AS_LINK"] == "Y");
+                $blank = ($arItem["PARAMS"]["PROPERTIES"]["UP_TARGET_BLANK"] == "Y");
+
+                $rel = '';
+                if (strpos($link, 'http') === 0) {
+                    $rel .= 'nofollow noopener';
+                    $blank = true;
+                }
+
+                if ($previousLevel) {
+                    if ($depthLevel < $previousLevel) {
+                        if ($previousLevel > 3) echo str_repeat("</ul></li>", ($previousLevel - 3));
+                        if ($previousLevel > 1) echo "</ul>";
+                        if ($depthLevel == 1) echo "</div></div></div></div></li>";
+
+                    } elseif ($depthLevel == $previousLevel) {
+                        if ($depthLevel == 2) echo "</ul>";
+                        elseif ($depthLevel == 1) echo "</div></div></div></div></li>";
+                    }
+                }
+
+                $arImage = false;
+                if ($depthLevel == 2) {
+                    $arImage = CFile::GetFileArray($arItem["PARAMS"]["PROPERTIES"]["UF_HEADER_MENU_ICON"]);
+                }
+
+                if ($isParent) {
+                    $id = "submenu-" . $key . "-" . randString(4);
+                    $scrollCssId = $id . '-scroll';
+                    $arScrollCssIds[] = $scrollCssId;
+
+                    $childSelected = $arItem["PARAMS"]["CHILD_SELECTED"];
+                    $checked = ($childSelected > 1);
+                    $showSymbol = $showSymbolSubmenu && ($depthLevel == 1);
+
+                        if ($depthLevel == 1) {
+                            ?><li class="<? echo $navItemCssClasses . ' ' . $parentItemCssClasses;
+                                         if ($cssClasses) { echo ' ' . $cssClasses; }
+                                         if ($arItem["SELECTED"]) { echo ' ' . $selectedItemCssClasses; }
+                                         if ($childSelected) { echo ' ' . $childSelectedItemCssClasses; }
+                                        ?>"<?
+                            ?>><?
+
+                                include __DIR__ . '/submenu-symbol.php';
+
+                                ?><div class="submenu-1-panel" id="<?= $id ?>"><?
+                                    ?><div class="page-line"><?
+
+                                        if ($arParams["U_PARAMS"]["SHOW_BUTTON_CLOSE"] == "Y") {
+                                            $iconClose = $arParams["~U_PARAMS"]["ICON_CLOSE"];
+
+                                            $btnCssClasses = "btn-close";
+                                            if (!$iconClose) $btnCssClasses .= ' icon--svg-close';
+
+                                            ?><div class="<?= $btnCssClasses ?>" onclick="$('#<?= $id ?>').hide();"><?
+                                                if ($iconClose) echo $iconClose;
+                                            ?></div><?
+                                        }
+
+                                        ?><div id="<?= $scrollCssId ?>"<?
+                                               ?> class="page-scroll scroll-2"><?
+                                            ?><div><?
+
+                        } elseif ($depthLevel == 2) {
+
+                            ?><ul class="<?= $ulCssClasses ?> menu-level-<?= ($depthLevel + 1) ?> page-cell"><?
+                                ?><li class="<?= $imageItemCssClasses ?> lazy-img-bg"<?
+                                      if ($arImage["SRC"]) { ?> style="background-image: url(<?= $arImage["SRC"] ?>);"<? }
+                                ?>></li><?
+
+                                ?><li class="<?= $titleItemCssClasses ?>"><?
+                                    if ($link) {
+                                        ?><a href="<?= $link ?>"<?
+                                             ?> class="<?= $navLinkCssClasses ?>"<?
+                                             if ($blank) { ?> target="_blank"<? }
+                                             if ($rel) { ?> rel="<?= $rel ?>"<? }
+                                        ?>><span><?= $text ?></span></a><?
+                                    } else {
+                                        ?><span class="<?= $navLinkCssClasses ?>"><?= $text ?></span><?
+                                    }
+                                ?></li><?
+
+                        } else {
+
+                            ?><li class="<? echo $navItemCssClasses . ' ' . $parentItemCssClasses;
+                                         if ($cssClasses) { echo ' ' . $cssClasses; }
+                                         if ($arItem["SELECTED"]) { echo ' ' . $selectedItemCssClasses; }
+                                         if ($childSelected) { echo ' ' . $childSelectedItemCssClasses; }
+                                        ?>"<?
+                            ?>><?
+
+                                include __DIR__ . '/submenu-symbol.php';
+
+                                ?><ul class="<?= $ulCssClasses ?> menu-level-<?= ($depthLevel + 1) ?>"><?
+                        }
+
+                } elseif ($depthLevel == 2) {
+
+                    ?><ul class="<?= $ulCssClasses ?> menu-level-<?= ($depthLevel + 1) ?>"><?
+                        ?><li class="<?= $imageItemCssClasses ?> lazy-img-bg"<?
+                              if ($arImage["SRC"]) { ?> style="background-image: url(<?= $arImage["SRC"] ?>);"<? }
+                        ?>></li><?
+
+                        ?><li class="<?= $titleItemCssClasses ?>"><?
+                            if ($link) {
+                                ?><a href="<?= $link ?>"<?
+                                     ?> class="<?= $navLinkCssClasses ?>"<?
+                                     if ($blank) { ?> target="_blank"<? }
+                                     if ($rel) { ?> rel="<?= $rel ?>"<? }
+                                ?>><span><?= $text ?></span></a><?
+                            } else {
+                                ?><span class="<?= $navLinkCssClasses ?>"><?= $text ?></span><?
+                            }
+                        ?></li><?
+
+                } else {
+
+                    ?><li class="<? echo $navItemCssClasses;
+                                 if ($cssClasses) { echo ' ' . $cssClasses; }
+                                 if ($arItem["SELECTED"]) { echo ' ' . $selectedItemCssClasses; }
+                                ?>"<?
+                    ?>><?
+                        if ($showTextAsLink) {
+                            ?><?= $text ?><?
+
+                        } elseif ($link) {
+                            ?><a href="<?= $link ?>"<?
+                                 ?> class="<?= $navLinkCssClasses ?>"<?
+                                 if ($blank) { ?> target="_blank"<? }
+                                 if ($rel) { ?> rel="<?= $rel ?>"<? }
+                            ?>><span><?= $text ?></span></a><?
+
+                        } else {
+                            ?><span class="<?= $navLinkCssClasses ?>"><?= $text ?></span><?
+                        }
+                    ?></li><?
+                }
+
+                $previousLevel = $depthLevel;
+            }
+
+            if ($previousLevel > 1) { // close last item tags
+                if ($previousLevel > 3) echo str_repeat("</ul></li>", ($previousLevel - 3));
+                if ($previousLevel > 1) echo "</ul>";
+                echo "</div></div></div></div></li>";
+            }
+        ?></ul><?
+    ?></nav><?
+
+    if ($arParams["U_PARAMS"]["USE_PERFECT_SCROLLBAR"] == "Y") {
+        ?><script><?
+            ?>if (typeof jsvo_perfect_scroll !== 'undefined') {<?
+                foreach ($arScrollCssIds as $id) {
+                    ?>jsvo_perfect_scroll.jsf_initSelector('#<?= $id ?>');<?
+                }
+            ?>}<?
+        ?></script><?
+    }
+}

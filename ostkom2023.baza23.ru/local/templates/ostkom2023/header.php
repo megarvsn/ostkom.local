@@ -8,10 +8,6 @@ global $APPLICATION, $USER;
 Loc::loadMessages(__FILE__);
 $asset = Asset::getInstance();
 
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . '/include/variable_definition.php')) {
-    require_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . '/include/variable_definition.php');
-}
-
 // Last Modified
 $filename = __FILE__;
 $LastModified_unix = filemtime($filename); // время последнего изменения страницы
@@ -87,7 +83,62 @@ $asset->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
         <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
     <? } ?>
     <header>
-        It's header
+        <? 
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--home_bussines",
+            array(),
+            false
+        );
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--language",
+            array(),
+            false
+        );
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--logotype",
+            array(),
+            false
+        ); 
+        $APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "header--menu",
+            array(
+                "ROOT_MENU_TYPE" => "header--menu",
+                "MENU_CACHE_TYPE" => "N",
+                "MENU_CACHE_TIME" => "",
+                "MENU_CACHE_USE_GROUPS" => "N",
+                "MENU_CACHE_GET_VARS" => array(""),
+                "CACHE_SELECTED_ITEMS" => "N",
+                "MAX_LEVEL" => 3,
+                "CHILD_MENU_TYPE" => "",
+                "USE_EXT" => "Y",
+                "DELAY" => "N",
+                "ALLOW_MULTI_SELECT" => "N"
+            ),
+            false
+        );
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--account",
+            array(),
+            false
+        );
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--basket",
+            array(),
+            false
+        );
+        $APPLICATION->IncludeComponent(
+            "baza23:local.empty",
+            "header--search",
+            array(),
+            false
+        ); 
+    ?>
     </header>
     <main>
         It's main

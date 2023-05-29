@@ -1,0 +1,18 @@
+footer {
+  .mobile_apps {
+    a {
+      &:hover,
+      &:active {
+        opacity: 0.75;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      a {
+        display: block;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      padding-bottom: 30px;
+    }
+  }
+}

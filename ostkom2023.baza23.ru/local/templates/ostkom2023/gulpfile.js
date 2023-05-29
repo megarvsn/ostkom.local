@@ -25,7 +25,81 @@ const srcDir = "./local/templates/ostkom2023/assets/";
 const appDir = "./local/templates/ostkom2023/";
 
 const arrStylesCSS = [
-  { src: "css/main.css", dest_path: "css/", dest_name: "styles.min.css" },
+  {
+    src: "css/components/bitrix/menu/header--menu/main.css",
+    dest_path: "components/bitrix/menu/header--menu/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--account/main.css",
+    dest_path: "components/baza23/local.empty/header--account/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--basket/main.css",
+    dest_path: "components/baza23/local.empty/header--basket/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--home_bussines/main.css",
+    dest_path: "components/baza23/local.empty/header--home_bussines/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--language/main.css",
+    dest_path: "components/baza23/local.empty/header--language/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--logotype/main.css",
+    dest_path: "components/baza23/local.empty/header--logotype/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/header--search/main.css",
+    dest_path: "components/baza23/local.empty/header--search/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--call/main.css",
+    dest_path: "components/baza23/local.empty/footer--call/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--check_services/main.css",
+    dest_path: "components/baza23/local.empty/footer--check_services/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--copyright/main.css",
+    dest_path: "components/baza23/local.empty/footer--copyright/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--follow_us/main.css",
+    dest_path: "components/baza23/local.empty/footer--follow_us/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--legal_information/main.css",
+    dest_path: "components/baza23/local.empty/footer--legal_information/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/baza23/local.empty/footer--mobile_apps/main.css",
+    dest_path: "components/baza23/local.empty/footer--mobile_apps/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/components/bitrix/menu/footer--menu_services/main.css",
+    dest_path: "components/bitrix/menu/footer--menu_services/",
+    dest_name: "style.css",
+  },
+  {
+    src: "css/main.css",
+    dest_path: "css/",
+    dest_name: "styles.min.css"
+  },
 ];
 const arrScriptsJS = [
   { src: "js/main.js", dest_path: "js/", dest_name: "script.min.js" },

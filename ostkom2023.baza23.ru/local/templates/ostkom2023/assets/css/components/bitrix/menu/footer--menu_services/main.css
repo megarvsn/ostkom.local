@@ -1,0 +1,30 @@
+footer {
+  nav {
+    margin-bottom: 20px;
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        padding: 5px 0;
+        a {
+          display: block;
+          line-height: 1.6;
+          font-size: 0.875rem;
+        }
+        > span {
+          display: block;
+          color: var(--grey-lighter);
+          line-height: 1.6;
+          font-size: 0.75rem;
+        }
+        &:first-child {
+          padding: 10px 0;
+          a {
+            font-size: 1rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

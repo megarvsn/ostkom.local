@@ -1,0 +1,15 @@
+footer {
+  .follow_us {
+    a {
+      &:hover,
+      &:active {
+        svg path {
+          fill: var(--orange);
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      padding-bottom: 30px;
+    }
+  }
+}

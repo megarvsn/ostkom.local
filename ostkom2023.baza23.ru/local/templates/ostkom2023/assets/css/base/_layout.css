@@ -9,6 +9,35 @@ body {
 }
 header {
   grid-area: header;
+
+  display: grid;
+  grid-template:
+    "home_bussines home_bussines language language language" auto
+    "logotype      main_menu     account  basket   search  " auto
+    / 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 40px;
+
+  .home_bussines {
+    grid-area: home_bussines;
+  }
+  .language {
+    grid-area: language;
+  }
+  .logotype {
+    grid-area: logotype;
+  }
+  .main_menu {
+    grid-area: main_menu;
+  }
+  .account {
+    grid-area: account;
+  }
+  .basket {
+    grid-area: basket;
+  }
+  .search {
+    grid-area: search;
+  }
 }
 main {
   grid-area: main;
@@ -24,6 +53,7 @@ footer {
     "copyright      copyright      legal_information legal_information" auto
     / 1fr 1fr 1fr 1fr;
   gap: 20px 40px;
+
   @media screen and (min-width: 768px) and (max-width: 992px) {
     grid-template:
       "check_services check_services    check_services   " auto
@@ -33,6 +63,7 @@ footer {
       "copyright      legal_information legal_information" auto
       / 1fr 1fr 1fr;
   }
+  
   @media screen and (max-width: 768px) {
     grid-template:
       "check_services   " auto

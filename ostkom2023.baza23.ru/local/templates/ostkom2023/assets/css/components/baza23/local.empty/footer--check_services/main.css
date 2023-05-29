@@ -1,0 +1,7 @@
+footer {
+  .check_services {
+    display: flex;
+    justify-content: center;
+    padding: 54px 0 22px;
+  }
+}
